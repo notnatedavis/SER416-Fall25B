@@ -4,7 +4,6 @@
 
 import tkinter as tk
 from tkinter import ttk, messagebox
-import sys
 
 class PvannCalculator:
     DEFAULT_PMT = 10000
@@ -14,13 +13,6 @@ class PvannCalculator:
     def __init__(self, root):
         self.root = root
         self.root.title("Pvann Calculator")
-        
-        # Set a fixed window size
-        self.root.geometry("400x250")
-        
-        # Create a main container frame with visible background
-        self.main_frame = tk.Frame(self.root, bg='white', padx=20, pady=20)
-        self.main_frame.pack(fill=tk.BOTH, expand=True)
         
         # Create variables
         self.pmt_var = tk.StringVar()
@@ -34,77 +26,32 @@ class PvannCalculator:
         self.reset_to_defaults()
 
     def _create_widgets(self):
-        # PMT Row - with explicit backgrounds and borders
-        pmt_frame = tk.Frame(self.main_frame, bg='white')
-        pmt_frame.pack(fill=tk.X, pady=8)
+        # PMT row
+        ttk.Label(self.root, text="PMT:").grid(row=0, column=0, sticky="w")
+        ttk.Entry(self.root, textvariable=self.pmt_var, width=10).grid(row=0, column=1)
+        ttk.Label(self.root, text="₹").grid(row=0, column=2, sticky="w")
         
-        tk.Label(pmt_frame, text="PMT:", bg='white', fg='black', 
-                font=('Helvetica', 11)).pack(side=tk.LEFT)
+        # Rate row
+        ttk.Label(self.root, text="Rate:").grid(row=1, column=0, sticky="w")
+        ttk.Entry(self.root, textvariable=self.rate_var, width=10).grid(row=1, column=1)
+        ttk.Label(self.root, text="%").grid(row=1, column=2, sticky="w")
         
-        pmt_entry = tk.Entry(pmt_frame, textvariable=self.pmt_var, 
-                           width=15, font=('Helvetica', 11),
-                           relief=tk.SUNKEN, bd=2)
-        pmt_entry.pack(side=tk.LEFT, padx=8)
-        
-        tk.Label(pmt_frame, text="₹", bg='white', fg='black',
-                font=('Helvetica', 11)).pack(side=tk.LEFT)
-        
-        # Rate Row
-        rate_frame = tk.Frame(self.main_frame, bg='white')
-        rate_frame.pack(fill=tk.X, pady=8)
-        
-        tk.Label(rate_frame, text="Rate:", bg='white', fg='black',
-                font=('Helvetica', 11)).pack(side=tk.LEFT)
-        
-        rate_entry = tk.Entry(rate_frame, textvariable=self.rate_var,
-                            width=15, font=('Helvetica', 11),
-                            relief=tk.SUNKEN, bd=2)
-        rate_entry.pack(side=tk.LEFT, padx=8)
-        
-        tk.Label(rate_frame, text="%", bg='white', fg='black',
-                font=('Helvetica', 11)).pack(side=tk.LEFT)
-        
-        # Periods Row
-        periods_frame = tk.Frame(self.main_frame, bg='white')
-        periods_frame.pack(fill=tk.X, pady=8)
-        
-        tk.Label(periods_frame, text="Periods:", bg='white', fg='black',
-                font=('Helvetica', 11)).pack(side=tk.LEFT)
-        
-        periods_entry = tk.Entry(periods_frame, textvariable=self.periods_var,
-                               width=15, font=('Helvetica', 11),
-                               relief=tk.SUNKEN, bd=2)
-        periods_entry.pack(side=tk.LEFT, padx=8)
-        
-        tk.Label(periods_frame, text="years", bg='white', fg='black',
-                font=('Helvetica', 11)).pack(side=tk.LEFT)
+        # Periods row
+        ttk.Label(self.root, text="Periods:").grid(row=2, column=0, sticky="w")
+        ttk.Entry(self.root, textvariable=self.periods_var, width=10).grid(row=2, column=1)
+        ttk.Label(self.root, text="years").grid(row=2, column=2, sticky="w")
         
         # Result
-        result_label = tk.Label(self.main_frame, textvariable=self.result_var,
-                               bg='white', fg='blue', 
-                               font=('Helvetica', 12, 'bold'))
-        result_label.pack(pady=15)
+        ttk.Label(self.root, textvariable=self.result_var).grid(row=3, column=0, columnspan=3, pady=5)
         
         # Buttons
-        button_frame = tk.Frame(self.main_frame, bg='white')
-        button_frame.pack(pady=15)
-        
-        calculate_btn = tk.Button(button_frame, text="Calculate", 
-                                 command=self.calculate, width=12,
-                                 font=('Helvetica', 11),
-                                 bg='#4CAF50', fg='white')  # Green button
-        calculate_btn.pack(side=tk.LEFT, padx=8)
-        
-        reset_btn = tk.Button(button_frame, text="Reset",
-                             command=self.reset_to_defaults, width=12,
-                             font=('Helvetica', 11),
-                             bg='#f44336', fg='white')  # Red button
-        reset_btn.pack(side=tk.LEFT, padx=8)
+        ttk.Button(self.root, text="Calculate", command=self.calculate).grid(row=4, column=0, pady=5)
+        ttk.Button(self.root, text="Reset", command=self.reset_to_defaults).grid(row=4, column=1, pady=5)
 
     def _validate_inputs(self):
         try:
             pmt = float(self.pmt_var.get())
-            rate = float(self.rate_var.get().rstrip('%')) / 100  # Fixed: was self.pmt_var
+            rate = float(self.rate_var.get().rstrip('%')) / 100
             periods = int(float(self.periods_var.get()))
             
             if pmt <= 0 or rate <= 0 or periods <= 0:
