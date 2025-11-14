@@ -5,12 +5,12 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 
-class PvannCalculator:
+class PvannCalculator :
     DEFAULT_PMT = 10000
     DEFAULT_RATE = 8.0
     DEFAULT_PERIODS = 20
     
-    def __init__(self, root):
+    def __init__(self, root) :
         self.root = root
         self.root.title("Pvann Calculator")
         
@@ -25,7 +25,7 @@ class PvannCalculator:
         self._create_widgets()
         self.reset_to_defaults()
 
-    def _create_widgets(self):
+    def _create_widgets(self) :
         # PMT row
         ttk.Label(self.root, text="PMT:").grid(row=0, column=0, sticky="w")
         ttk.Entry(self.root, textvariable=self.pmt_var, width=10).grid(row=0, column=1)
@@ -48,31 +48,31 @@ class PvannCalculator:
         ttk.Button(self.root, text="Calculate", command=self.calculate).grid(row=4, column=0, pady=5)
         ttk.Button(self.root, text="Reset", command=self.reset_to_defaults).grid(row=4, column=1, pady=5)
 
-    def _validate_inputs(self):
-        try:
+    def _validate_inputs(self) :
+        try :
             pmt = float(self.pmt_var.get())
             rate = float(self.rate_var.get().rstrip('%')) / 100
             periods = int(float(self.periods_var.get()))
             
-            if pmt <= 0 or rate <= 0 or periods <= 0:
+            if pmt <= 0 or rate <= 0 or periods <= 0 :
                 raise ValueError("Values must be positive")
                 
             return pmt, rate, periods
             
-        except ValueError:
+        except ValueError : 
             raise ValueError("Please enter valid numbers")
 
     def calculate_future_value(self, pmt, rate, periods):
         if rate == 0:
             return pmt * periods
-        return pmt * ((1 + rate) ** periods - 1) / rate
+        return (pmt * ((1 - ((1 / (1 + rate)) ** periods)) / rate))
 
-    def calculate(self):
-        try:
+    def calculate(self) :
+        try :
             pmt, rate, periods = self._validate_inputs()
             future_value = self.calculate_future_value(pmt, rate, periods)
             self.result_var.set(f"Future Value: ₹{future_value:,.2f}")
-        except ValueError as e:
+        except ValueError as e :
             messagebox.showerror("Error", str(e))
             self.result_var.set("Future Value: Error")
 
