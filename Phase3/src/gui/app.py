@@ -15,20 +15,20 @@ class ClubManagementApp(ctk.CTk) :
 
         self.auth_service = AuthenticationService.get_instance()
         self.current_user = None
-        self.current_window = None
+        self.current_frame = None
         
         # configure appearance
         ctk.set_appearance_mode("System")
         ctk.set_default_color_theme("blue")
         
-        self.root.title("Club Management System")
-        self.root.geometry("1200x800")
+        self.title("Club Management System")
+        self.geometry("1200x800")
         
         self.show_login()
     
-    def clear_current_frame(self):
+    def clear_current_frame(self) :
         # clear the current frame from the window
-        if self.current_frame:
+        if self.current_frame :
             self.current_frame.destroy()
             self.current_frame = None
     

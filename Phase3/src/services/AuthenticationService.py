@@ -10,17 +10,19 @@ class AuthenticationService :
     # singleton service for handling user authentication and sessions
 
     _instance = None
-    _sessions: Dict[str, User] = {}  # session_id -> user mapping
-    _users_file = "users.txt" # plain .txt for user storage
+    _initialized = False
 
     def __init__(self) :
         # private constructor for singleton pattern
-        if AuthenticationService._instance is not None :
-            raise Exception("This class is a singleton!")
-        else :
-            AuthenticationService._instance = self
-            self._ensure_users_file()
-            self._sessions = {} # initialize sessions
+        if AuthenticationService._initialized :
+            return
+            
+        self._sessions : Dict[str, User] = {}  # session_id -> user mapping
+        self._users_file = "users.txt" # plain .txt for user storage
+        self._ensure_users_file()
+        
+        AuthenticationService._instance = self
+        AuthenticationService._initialized = True
     
     def _ensure_users_file(self) -> None :
         # create users file if it doesn't exist

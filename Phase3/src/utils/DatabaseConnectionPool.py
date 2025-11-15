@@ -26,7 +26,7 @@ class DatabaseConnectionPool :
     _connections: List[DatabaseConnection] = []
     _max_connections = 10
 
-    def __init__(self):
+    def __init__(self) :
         # private constructor for singleton pattern
         if DatabaseConnectionPool._instance is not None :
             raise Exception("This class is a singleton!")

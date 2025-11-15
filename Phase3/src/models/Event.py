@@ -4,15 +4,10 @@
 from typing import List, Dict, Any, TYPE_CHECKING
 from datetime import datetime
 from dataclasses import dataclass, field
-from abc import ABC
-
-# create a protocol for Observer to break circular dependency
-class EventObserver(ABC) :
-    def update(self, event: 'Event') -> None :
-        pass
 
 if TYPE_CHECKING :
-    from ..models.User import User
+    from .User import User
+    from ..utils.EventObserver import EventObserver
 
 @dataclass
 class Event :
@@ -38,14 +33,18 @@ class Event :
         if user not in self.participants :
             self.participants.append(user)
             self.notify_observers()
+
             return True
+        
         return False
 
     def remove_participant(self, user: 'User') -> bool :
         if user in self.participants :
             self.participants.remove(user)
             self.notify_observers()
+
             return True
+        
         return False
 
     def attach(self, observer: EventObserver) -> None :

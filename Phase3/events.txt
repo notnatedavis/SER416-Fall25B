@@ -1,0 +1,6 @@
+event_1a2b3c4d|Chess Tournament|Student Center|2024-02-15T14:30:00|True|Annual chess competition with prizes|user_a1b2c3d4|user_a1b2c3d4,user_e5f6g7h8,user_i9j0k1l2
+event_5e6f7g8h|Book Discussion|Library Room A|2024-02-20T18:00:00|True|Discussion of this month's book selection|user_e5f6g7h8|user_e5f6g7h8,user_m3n4o5p6
+event_9i0j1k2l|Photography Workshop|Art Building|2024-02-25T10:00:00|False|Learn portrait photography techniques - $20 fee|user_i9j0k1l2|user_i9j0k1l2,user_u1v2w3x4
+event_3m4n5o6p|Basketball Practice|Main Gym|2024-02-16T16:00:00|True|Weekly practice session|user_m3n4o5p6|user_m3n4o5p6,user_y5z6a7b8,user_c9d0e1f2
+event_7q8r9s0t|Hackathon Kickoff|Computer Lab|2024-03-01T09:00:00|True|24-hour coding competition begins|user_u1v2w3x4|user_u1v2w3x4,user_i9j0k1l2
+event_1u2v3w4x|Spring Concert|Auditorium|2024-03-10T19:30:00|False|Annual music club performance - $10 tickets|user_y5z6a7b8|user_y5z6a7b8,user_c9d0e1f2,user_a1b2c3d4

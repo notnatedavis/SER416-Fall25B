@@ -19,6 +19,7 @@ Phase3/
         - `__init__.py`
         - `ClubManager.py`
         - `EventManager.py`
+        - `EventNotificationManager.py`
     - models/
         - `__init__.py`
         - `Club.py`
@@ -30,6 +31,7 @@ Phase3/
     - services/
         - `__init__.py`
         - `AuthenticationService.py`
+        - `BaseStorageService.py`
         - `Login.py`
         - `NotificationService.py`
         - `Registration.py`
@@ -37,9 +39,13 @@ Phase3/
         - `__init__.py`
         - `ApplicationConfiguration.py`
         - `DatabaseConnectionPool.py`
+        - `EventObserver.py`
         - `Observable.py`
         - `Observer.py`
         - `ValidatePrivileges.py`
     - `__init__.py`
+- `clubs.txt` Filler club data
+- `events.txt` Filler events data
 - `main.py`
 - `ReadMe.md`
+- `users.txt` Filler user data

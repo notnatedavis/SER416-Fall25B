@@ -1,0 +1,6 @@
+club_1a2b3c4d|Chess Club|user_a1b2c3d4|True|user_a1b2c3d4,user_e5f6g7h8,user_i9j0k1l2
+club_5e6f7g8h|Book Club|user_e5f6g7h8|True|user_e5f6g7h8,user_m3n4o5p6,user_u1v2w3x4
+club_9i0j1k2l|Photography Club|user_i9j0k1l2|False|user_i9j0k1l2
+club_3m4n5o6p|Basketball Club|user_m3n4o5p6|True|user_m3n4o5p6,user_y5z6a7b8,user_c9d0e1f2,user_a1b2c3d4
+club_7q8r9s0t|Coding Club|user_u1v2w3x4|True|user_u1v2w3x4,user_i9j0k1l2,user_e5f6g7h8
+club_1u2v3w4x|Music Club|user_y5z6a7b8|False|user_y5z6a7b8

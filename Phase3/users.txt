@@ -1,0 +1,8 @@
+user_a1b2c3d4|John Smith|john.smith@email.com|password123|False
+user_e5f6g7h8|Sarah Johnson|sarah.j@email.com|password123|False
+user_i9j0k1l2|Mike Chen|mike.chen@email.com|password123|False
+user_m3n4o5p6|Emily Davis|emily.davis@email.com|password123|False
+user_q7r8s9t0|Admin User|admin@clubsystem.com|admin123|True
+user_u1v2w3x4|Lisa Rodriguez|l.rodriguez@email.com|password123|False
+user_y5z6a7b8|David Kim|david.kim@email.com|password123|False
+user_c9d0e1f2|Jessica Brown|jess.brown@email.com|password123|False
