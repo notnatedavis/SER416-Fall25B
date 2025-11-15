@@ -3,7 +3,6 @@
 # --- Imports --- #
 import logging
 from typing import List, Optional
-from ..utils.ApplicationConfiguration import ApplicationConfiguration
 
 class DatabaseConnection :
     # mock db connection pool 
@@ -43,10 +42,16 @@ class DatabaseConnectionPool :
 
     def _initialize_connections(self) -> None :
         # initialize the connection pool
-        config = ApplicationConfiguration.get_instance()
-        self._max_connections = config.get_property('database.max_connections')
+        try :
+            from ..utils.ApplicationConfiguration import ApplicationConfiguration
+            
+            config = ApplicationConfiguration.get_instance()
+            self._max_connections = config.get_property('database.max_connections')
+        except (ImportError, KeyError) :
+            # use default if config not available
+            self._max_connections = 10
         
-        for i in range(3):  # Start with 3 connections
+        for i in range(3) :
             self._connections.append(DatabaseConnection(i))
 
     def get_connection(self) -> Optional[DatabaseConnection] :

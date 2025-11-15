@@ -1,12 +1,20 @@
 ### Phase 3
 
 current project structure :
-
+Phase3/
 - src/
     - factories/
         - `__init__.py`
         - `ClubFactory.py`
         - `EventFactory.py`
+    - gui/
+        - `__init__.py`
+        - `app.py`
+        - `club_management.py`
+        - `event_management.py`
+        - `login_window.py`
+        - `main_window.py`
+        - `registration_window.py`
     - managers/
         - `__init__.py`
         - `ClubManager.py`
@@ -24,6 +32,7 @@ current project structure :
         - `AuthenticationService.py`
         - `Login.py`
         - `NotificationService.py`
+        - `Registration.py`
     - utils/
         - `__init__.py`
         - `ApplicationConfiguration.py`
@@ -32,5 +41,5 @@ current project structure :
         - `Observer.py`
         - `ValidatePrivileges.py`
     - `__init__.py`
-    - `demo.py`
-- tests/
+- `main.py`
+- `ReadMe.md`

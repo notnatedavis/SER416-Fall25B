@@ -2,11 +2,12 @@
 
 # --- Imports --- #
 from ..utils.Observer import Observer
-from ..models.Event import Event
+from ..models.Event import Event, EventObserver
 from ..models.User import User
 
-class NotificationService(Observer) :
+class NotificationService(Observer, EventObserver) :
     # service for handling user notifications via email and push
+    # implements both Observer & EventObserver for compatability
     def __init__(self, user: User) :
         # initialize notification service for a user
         self.user = user

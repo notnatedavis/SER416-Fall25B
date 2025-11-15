@@ -4,7 +4,7 @@
 from typing import List, TYPE_CHECKING
 from dataclasses import dataclass, field
 if TYPE_CHECKING :
-    from ..models.User import User
+    from .User import User
 
 @dataclass
 class Club :
