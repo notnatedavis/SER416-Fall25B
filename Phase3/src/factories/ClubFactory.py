@@ -2,8 +2,8 @@
 
 # --- Imports --- #
 import uuid
-from ..models.Club import Club
-from ..models.User import User
+from src.models.Club import Club
+from src.models.User import User
 
 class ClubFactory :
     # factory class for creating Club instances with proper initialization

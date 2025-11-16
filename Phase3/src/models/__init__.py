@@ -1,12 +1,12 @@
 # src/models/__init__.py
 
 # --- Imports --- #
-from .User import User
-from .Club import Club
-from .Event import Event
-from .ClubMembership import ClubMembership
-from .EventRegistration import EventRegistration
-from .Staff import Staff
+from src.models.User import User
+from src.models.Club import Club
+from src.models.Event import Event
+from src.models.ClubMembership import ClubMembership
+from src.models.EventRegistration import EventRegistration
+from src.models.Staff import Staff
 
 __all__ = [
     'User', 

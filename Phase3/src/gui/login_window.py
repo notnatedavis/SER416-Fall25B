@@ -2,7 +2,7 @@
 
 # --- Imports --- #
 import customtkinter as ctk
-from ..services.Login import Login
+from src.services.Login import Login
 
 class LoginWindow(ctk.CTkFrame) :
 

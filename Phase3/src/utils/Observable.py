@@ -1,9 +1,8 @@
 # src/utils/Observable.py
 
 # --- Imports --- #
-from typing import List, TYPE_CHECKING
-if TYPE_CHECKING :
-    from ..utils.Observer import Observer
+from typing import List
+from src.utils.Observer import Observer
 
 class Observable :
     # base class for observable objects in the observer pattern

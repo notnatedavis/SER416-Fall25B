@@ -3,9 +3,7 @@
 # --- Imports --- #
 from datetime import datetime
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
-if TYPE_CHECKING :
-    from ..models.User import User
+from src.models.User import User
 
 @dataclass
 class ClubMembership :

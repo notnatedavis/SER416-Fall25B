@@ -1,9 +1,9 @@
 # src/services/NotificationService.py
 
 # --- Imports --- #
-from ..utils.EventObserver import EventObserver
-from ..models.Event import Event
-from ..models.User import User
+from src.utils.EventObserver import EventObserver
+from src.models.Event import Event
+from src.models.User import User
 
 class NotificationService(EventObserver) :
     # service for handling user notifications via email and push

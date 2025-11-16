@@ -1,14 +1,12 @@
 # src/utils/ValidatePrivileges.py
 
 # --- Imports --- #
-from ..models.User import User
-from ..models.Event import Event
-from ..models.Club import Club
+from src.models.User import User
 
 class ValidatePrivileges :
     # utility class for validating user privileges across the system
     @staticmethod
-    def can_manage_event(user: User, event: Event) -> bool :
+    def can_manage_event(user: User, event: 'Event') -> bool :
         # check if user can manage (edit/delete) an event
         if not user or not event :
             return False
@@ -24,7 +22,7 @@ class ValidatePrivileges :
         return False
 
     @staticmethod
-    def can_manage_club(user: User, club: Club) -> bool :
+    def can_manage_club(user: User, club: 'Club') -> bool :
         # check if user can manage a club
         if not user or not club :
             return False

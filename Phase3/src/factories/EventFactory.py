@@ -4,8 +4,8 @@
 import uuid
 from datetime import datetime
 from typing import Dict, Any
-from ..models.Event import Event
-from ..models.User import User
+from src.models.Event import Event
+from src.models.User import User
 
 class EventFactory :
     # factory class for creating Event instances with consistent initialization

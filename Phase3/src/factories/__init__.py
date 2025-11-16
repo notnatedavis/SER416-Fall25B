@@ -1,8 +1,8 @@
 # src/factories/__init__.py
 
 # --- Imports --- #
-from .ClubFactory import ClubFactory
-from .EventFactory import EventFactory
+from src.factories.ClubFactory import ClubFactory
+from src.factories.EventFactory import EventFactory
 
 __all__ = [
     'ClubFactory', 

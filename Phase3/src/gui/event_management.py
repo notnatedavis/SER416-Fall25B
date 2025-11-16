@@ -4,8 +4,8 @@
 import customtkinter as ctk
 from tkinter import messagebox
 from datetime import datetime
-from ..managers.EventManager import EventManager
-from ..models.User import User
+from src.managers.EventManager import EventManager
+from src.models.User import User
 
 class EventManagementFrame(ctk.CTkFrame) :
 

@@ -3,8 +3,8 @@
 # --- Imports --- #
 import customtkinter as ctk
 from tkinter import messagebox
-from ..managers.ClubManager import ClubManager
-from ..models.User import User
+from src.managers.ClubManager import ClubManager
+from src.models.User import User
 
 class ClubManagementFrame(ctk.CTkFrame) :
 

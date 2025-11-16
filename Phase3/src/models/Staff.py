@@ -1,8 +1,8 @@
 # src/models/Staff.py
 
 # --- Imports --- #
-from .User import User
-from .Club import Club
+from src.models.User import User
+from src.models.Club import Club
 from typing import List
 
 class Staff(User) :

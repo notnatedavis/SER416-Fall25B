@@ -1,11 +1,11 @@
 # src/__init__.py
 
 # --- Imports --- #
-from .models.User import User
-from .models.Club import Club
-from .models.Event import Event
-from .services.AuthenticationService import AuthenticationService
-from .managers.ClubManager import ClubManager
+from src.models.User import User
+from src.models.Club import Club
+from src.models.Event import Event
+from src.services.AuthenticationService import AuthenticationService
+from src.managers.ClubManager import ClubManager
 
 __all__ = [
     'User',

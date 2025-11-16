@@ -1,13 +1,12 @@
 # src/models/Event.py
 
 # --- Imports --- #
-from typing import List, Dict, Any, TYPE_CHECKING
+from typing import List, Dict, Any
 from datetime import datetime
 from dataclasses import dataclass, field
-
-if TYPE_CHECKING :
-    from .User import User
-    from ..utils.EventObserver import EventObserver
+from src.models.User import User
+# use string type hint to avoid circular import
+from src.utils.EventObserver import EventObserver
 
 @dataclass
 class Event :
@@ -20,7 +19,8 @@ class Event :
     description: str
     owner_id: str
     participants: List['User'] = field(default_factory=list)
-    _observers: List[EventObserver] = field(default_factory=list)
+    _observers: List['EventObserver'] = field(default_factory=list)
+    # use string type hint ^
 
     def update_event_details(self, **kwargs: Any) -> None :
         for key, value in kwargs.items() :
@@ -47,11 +47,11 @@ class Event :
         
         return False
 
-    def attach(self, observer: EventObserver) -> None :
+    def attach(self, observer: 'EventObserver') -> None :
         if observer not in self._observers :
             self._observers.append(observer)
 
-    def detach(self, observer: EventObserver) -> None :
+    def detach(self, observer: 'EventObserver') -> None :
         if observer in self._observers :
             self._observers.remove(observer)
 

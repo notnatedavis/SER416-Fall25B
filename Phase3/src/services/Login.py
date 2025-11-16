@@ -1,8 +1,8 @@
 # src/services/Login.py
 
 # --- Imports --- #
-from .AuthenticationService import AuthenticationService
-from ..models.User import User
+from src.services.AuthenticationService import AuthenticationService
+from src.models.User import User
 
 class Login :
     # controller for user login operations and credential validation

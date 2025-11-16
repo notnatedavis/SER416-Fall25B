@@ -2,24 +2,24 @@
 
 # --- Imports --- #
 from typing import List, Optional
-from ..models.Club import Club
-from ..factories.ClubFactory import ClubFactory
-from ..models.User import User
-from ..services.BaseStorageService import BaseStorageService
+from src.models.Club import Club
+from src.factories.ClubFactory import ClubFactory
+from src.models.User import User
+from src.services.BaseStorageService import BaseStorageService
 import uuid
 
 class ClubManager :
-    # Manager class for club operations and business logic
+    # manager class for club operations and business logic
 
     def __init__(self) :
-        # Initialize ClubManager with club factory & storage
+        # initialize ClubManager with club factory & storage
         self.club_factory = ClubFactory()
         self.storage = BaseStorageService("clubs.txt")
         self._clubs: List[Club] = []
         self._load_clubs()
 
     def _load_clubs(self) -> None :
-        # Load clubs from persistent storage
+        # load clubs from persistent storage
         lines = self.storage.read_all_lines()
         for line in lines :
             try :

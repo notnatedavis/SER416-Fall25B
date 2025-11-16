@@ -2,9 +2,9 @@
 
 # --- Imports --- #
 import customtkinter as ctk
-from ..models.User import User
-from .club_management import ClubManagementFrame
-from .event_management import EventManagementFrame
+from src.models.User import User
+from src.gui.club_management import ClubManagementFrame
+from src.gui.event_management import EventManagementFrame
 
 class MainWindow(ctk.CTkFrame) :
     def __init__(self, parent, user: User, on_logout) :

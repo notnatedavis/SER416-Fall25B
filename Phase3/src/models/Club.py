@@ -1,10 +1,9 @@
 # src/models/Club.py
 
 # --- Imports --- #
-from typing import List, TYPE_CHECKING
+from typing import List
 from dataclasses import dataclass, field
-if TYPE_CHECKING :
-    from .User import User
+from src.models.User import User
 
 @dataclass
 class Club :

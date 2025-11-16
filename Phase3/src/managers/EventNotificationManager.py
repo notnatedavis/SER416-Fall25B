@@ -2,9 +2,9 @@
 
 # --- Imports --- #
 from typing import Dict, List
-from ..models.Event import Event
-from ..models.User import User
-from ..services.NotificationService import NotificationService
+from src.models.Event import Event
+from src.models.User import User
+from src.services.NotificationService import NotificationService
 
 class EventNotificationManager :
     # manager for handling event notifications and observer attachments

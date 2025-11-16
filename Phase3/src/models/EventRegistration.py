@@ -3,10 +3,8 @@
 # --- Imports --- #
 from datetime import datetime
 from dataclasses import dataclass
-from typing import TYPE_CHECKING
-if TYPE_CHECKING :
-    from .User import User
-    from .Event import Event
+from src.models.User import User
+from src.models.Event import Event
 
 @dataclass
 class EventRegistration :

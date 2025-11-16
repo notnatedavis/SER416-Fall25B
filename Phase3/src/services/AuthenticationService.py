@@ -4,7 +4,7 @@
 import uuid
 import os
 from typing import Dict, Optional
-from ..models.User import User
+from src.models.User import User
 
 class AuthenticationService :
     # singleton service for handling user authentication and sessions

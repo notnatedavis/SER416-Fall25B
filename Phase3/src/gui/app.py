@@ -2,10 +2,10 @@
 
 # --- Imports --- #
 import customtkinter as ctk
-from .login_window import LoginWindow
-from .registration_window import RegistrationWindow
-from .main_window import MainWindow
-from ..services.AuthenticationService import AuthenticationService
+from src.gui.login_window import LoginWindow
+from src.gui.registration_window import RegistrationWindow
+from src.gui.main_window import MainWindow
+from src.services.AuthenticationService import AuthenticationService
 
 class ClubManagementApp(ctk.CTk) :
     # main application class inherits from CTk

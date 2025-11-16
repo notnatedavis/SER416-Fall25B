@@ -2,7 +2,7 @@
 
 # --- Imports --- #
 import customtkinter as ctk
-from ..services.Registration import Registration
+from src.services.Registration import Registration
 
 class RegistrationWindow(ctk.CTkFrame) :
 
